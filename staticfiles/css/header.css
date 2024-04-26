@@ -1,0 +1,124 @@
+.head {
+    position:fixed;
+    width: 100%;
+    display: flex;
+    top:0;
+    left:0;
+    background-color: white;
+    height:57px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(245, 241, 241);
+    z-index:100;
+}
+.left-side{
+    background-color:white;
+    display:flex;
+    margin-right: 60px;
+    padding-left: 25px;
+    align-items: center;
+}
+.middle{
+    display:flex;
+    flex:1;
+    margin-right: 15px;
+    align-items: center;
+    background-color: white;
+    max-width: 470px;
+}
+.right-side{
+    background-color: white;
+    display:flex;
+    width:180px;
+    margin-right: 29px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.ham{
+    height:24px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.logo{
+    height:20px;
+    cursor: pointer;
+
+}
+.searchbar{
+    height:40px;
+    display:flex;
+    flex:1;
+    border:1px solid #cccccc;
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 0px 12px;
+    box-shadow: inset 3px 2px 2px rgba(0,0,0,.1);
+    width: 0;
+}
+.searchbar::placeholder{
+    font-size: 16px;
+    border:none;
+}
+.searchbar:focus{
+    outline:none;
+}
+.search-button{
+    height:41px;
+    width:64px;
+    border:1px solid #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    margin-left: -5px;
+    border-top-right-radius:2px ;
+    border-bottom-right-radius:2px ;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.voicebutton{
+    height: 41px;
+    width:41px;
+    border:none;
+    background-color: #f8f8f8;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.voiceimage{
+    width:25px;
+}
+.search-img{
+    width:24px;
+}
+.channel{
+    height:32px;
+    width:32px;
+    border-radius:25px;
+}
+.create,.notification,.apps{
+    height:25px;
+    cursor: pointer;
+}
+.createbox{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.pop{
+    position: absolute;
+    bottom:-55px;
+    opacity: 0;
+    pointer-events: none;
+}
+.createbox:hover{
+    .pop{
+        opacity: 1;
+    }
+    
+}
+

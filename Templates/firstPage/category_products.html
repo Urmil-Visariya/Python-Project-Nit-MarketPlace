@@ -1,0 +1,50 @@
+<head>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/header.css'%}">
+</head>
+
+<header class="head">
+    <div class="left-side">
+        <p>{{user.username}}</p>
+    </div>
+    <div class="middle"> 
+        <form  class="middle" >     
+          <input class="searchbar" placeholder="Search" type="text" name="search">
+            <button class="search-button" type="submit"><img class="search-img" src="media/template_pics/search.svg"alt=""></button>
+            
+        </form>
+    </div>
+    
+    <div class="right-side">
+        <div class="createbox">
+            <img class="create" src="upload.svg" alt="">
+            <div class="pop" style="background-color: #60606084;color:white;padding: 5px;">Create</div>
+        </div>
+        <div><img class="apps" src="youtube-apps.svg" alt=""></div>
+        <div><img class="notification" src="notifications.svg" alt=""></div>
+        <div><img class="channel" src="my-channel.jpeg" alt=""></div>
+    </div>
+</header>
+
+{%for prod in category_products%}
+<div class="video">
+            
+    <div class="thumbnailbox">
+    <a href="firstpage/{{prod.uuid}}"><img class="thumbnail" src="/media/{{prod.pic}}"  alt=""></a>
+    </div>
+    <div class="info">
+        <div class="channel2">
+            <img class="channel2img" src="channel-1.jpeg" alt="">
+        </div>
+        <div class="stats">
+            <p class="name">{{prod.desc}}</p>
+            <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;"><a style="text-decoration:none;" href="firstpage/{{prod.uuid}}" target="_blank">{{prod.name}}</a></p>  
+            <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;">{{prod.category.category}}</p>
+            <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;"><a style="text-decoration:none;" href="add_to_cart/{{ prod.uuid}}" target="_blank">add to cart</a></p>
+            <p>{{prod.user.email}}</p>
+            <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;"><a style="text-decoration:none;" href="contactseller/{{ prod.uuid}}" target="_blank">Contact Seller</a></p>
+        </div>
+    </div>
+</div>
+
+{%endfor%}

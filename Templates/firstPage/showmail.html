@@ -1,0 +1,6 @@
+
+{%for info in buyers %}
+<p>{{info.buyer.email}}</p>
+<p>{{info.buyer.username}}</p>
+<p><a href="readmessage/{{info.id}}">Read message</a></p>
+{%endfor%}

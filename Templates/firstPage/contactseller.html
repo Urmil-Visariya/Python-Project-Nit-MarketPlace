@@ -1,0 +1,27 @@
+<div class="main">
+    <div class="video">
+        
+        <div class="thumbnailbox">
+        <a href="firstpage/{{product.uuid}}"><img class="thumbnail" src="/media/{{product.pic}}"  alt=""></a>
+        </div>
+        <div class="info">
+            <div class="stats">
+                <p class="name">{{product.desc}}</p>
+                <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;"><a style="text-decoration:none;" href="firstpage/{{product.uuid}}" target="_blank">{{product.name}}</a></p>  
+                <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;"><a style="text-decoration:none;" href="add_to_cart/{{ product.uuid}}" target="_blank">add to cart</a></p>
+                <a href="delete/{{product.uuid}}">delete</a>  
+            </div>
+        </div>
+    </div>
+
+
+<form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="row mb-3">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Contact Seller</label>
+      <div class="col-sm-10">
+        <textarea name="desc" id="" cols="30" rows="10" class="form-control"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

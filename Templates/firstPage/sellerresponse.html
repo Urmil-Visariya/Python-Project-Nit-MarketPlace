@@ -1,0 +1,20 @@
+<p>{{seller_info.seller.email}}</p>
+
+{%for info in sellermail %}
+<p>{{info.desc}}</p>
+<p>{{info.sent_at}}</p>
+{%endfor%}
+<br><br>
+
+{%for info in mymessage %}
+    {%if forloop.counter == 1 %}
+    <p><b>My Messages: </b></p>
+    {%endif%}
+<p>{{info.desc}}</p>
+<p>{{info.sent_at}}</p>
+{%endfor%}
+{%if mymessage %}
+<a href="contactseller/{{seller_info.product.uuid}}">Reply to the seller</a>
+{%else%}
+<p>No Messages here yet</p>
+{%endif%}

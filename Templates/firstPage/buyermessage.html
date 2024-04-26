@@ -1,0 +1,16 @@
+{{email.buyer.email}}
+
+{%for mail in buyer_mail%}
+<p>{{mail.desc}}</p>
+<p>{{mail.sent_at}}</p>
+{%endfor%}
+<br><br>
+
+<p><b>My Messages</b></p>
+
+{%for mail in mymessages%}
+<p>{{mail.desc}}</p>
+<p>{{mail.sent_at}}</p>
+{%endfor%}
+
+<a href="contactbuyer/{{email.id}}">Reply to the buyer</a>

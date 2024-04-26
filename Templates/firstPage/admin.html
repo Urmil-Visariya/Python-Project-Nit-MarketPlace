@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{%static 'css/sidebar.css'%}">
+
+        <link rel="stylesheet" href="{%static 'css/header.css'%}">
+        
+</head>
+
+<body>
+    <header class="head">
+        <div class="left-side">
+            <a href="/profile" style="text-decoration: none; color:black">{{user.username}}</a>
+        </div>
+        <div class="middle" style="padding-top: 10px;"> 
+            <form  class="middle" >     
+              <input class="searchbar" placeholder="Search" type="text" name="search">
+                <button class="search-button" type="submit">
+                    <img class="search-img"  src="media/template_pics/search.svg" alt="">
+                </button>
+            </form>
+        </div>
+        
+        <div class="right-side">
+            <div style="left: 20px;"><img class="channel" style="
+                height:40px;
+                width:40px;
+                border-radius:25px;" src="{{ user.profile.image.url }}" alt="">
+            </div>
+        </div>
+
+    </header>
+
+    <p>{{user.email}}</p>
+
+{%for prod in Data%}
+<div class="video">
+    
+    <div class="thumbnailbox">
+    <a href="firstpage/{{prod.uuid}}"><img class="thumbnail" src="/media/{{prod.pic}}"  alt=""></a>
+    </div>
+    <div class="info">
+        <div class="stats">
+            <p class="name">{{prod.desc}}</p>
+            <p class="name">{{prod.username}}</p>
+            <p style="font-weight:500 ;font-size:14px;line-height:1.5;margin-bottom: 10px;"><a style="text-decoration:none;" href="firstpage/{{prod.uuid}}" target="_blank">{{prod.name}}</a></p>  
+        </div>
+    </div>
+    <p><a href="/admin/add_product/{{prod.uuid}}">Add Product</a></p>
+</div>
+{%endfor%}
+
+{%for user in User%}
+<div class="video">
+    
+        <div class="stats">
+            <p class="name">{{user.email}}</p>
+            <p class="name">{{user.username}}</p>
+        </div>
+    </div>
+</div>
+{%endfor%}
+
+</body>
+</html>
+
+    
